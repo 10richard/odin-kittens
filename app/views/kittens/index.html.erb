@@ -1,0 +1,9 @@
+<h1>Index of Kittens</h1>
+
+<ul>
+<% @kittens.each do |kitten| %>
+    <li>
+        <p><%= kitten.name %></p>
+    </li>
+<% end %>
+</ul>
