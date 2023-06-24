@@ -1,5 +1,9 @@
 <h1>Index of Kittens</h1>
 
+<% if flash[:success] %>
+    <%= flash[:success]%>
+<% end %>
+
 <ul>
 <% @kittens.each do |kitten| %>
     <li>

@@ -1,5 +1,9 @@
 <h1><%= @kitten.name %></h1>
 
+<% if flash[:success] %>
+    <%= flash[:success]%>
+<% end %>
+
 <div>
     <p>Age: <%= @kitten.age %></p>
 </div>
@@ -11,3 +15,5 @@
 <div>
     <p>Softness: <%= @kitten.softness %></p>
 </div>
+
+<%= link_to 'Delete Kitten', @kitten, data: { turbo_method: :delete, turbo_confirm: 'Are your sure?' }%>
