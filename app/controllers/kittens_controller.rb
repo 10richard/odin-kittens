@@ -12,8 +12,10 @@ class KittensController < ApplicationController
         @kitten = Kitten.new(kitten_params)
 
         if @kitten.save
+            flash[:success] = 'You have successfully created a kitten'
             redirect_to @kitten and return
         end
+        flash[:error] = 'You did not properly fill out all the fields dummy'
         render :new, status: :unprocessable_entity
     end
 
@@ -29,15 +31,17 @@ class KittensController < ApplicationController
         @kitten = Kitten.find(params[:id])
 
         if @kitten.update(kitten_params)
+            flash[:success] = 'You have successfully updated a kitten'
             redirect_to @kitten and return
         end
+        flash[:error] = 'You did not properly fill out all the fields dummy'
         render :edit, status: :unprocessable_entity
     end
 
     def destroy
         @kitten = Kitten.find(params[:id])
         @kitten.destroy
-
+        flash[:success] = 'You have successfully deleted a kitten'
         redirect_to :root
     end
 
