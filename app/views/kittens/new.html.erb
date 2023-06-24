@@ -1,3 +1,5 @@
 <h1>Add a NEW Kitten!</h1>
 
+<%= flash[:error] if flash[:error]%>
+
 <%= render 'form', kitten: @kitten %>

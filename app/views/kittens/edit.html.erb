@@ -1,5 +1,7 @@
 <h1>Update <%= @kitten.name %>'s Info</h1>
 
+<%= flash[:error] if flash[:error]%>
+
 <%= render 'form', kitten: @kitten %>
 
 <%= link_to 'Delete Kitten', @kitten, data: { turbo_method: :delete, turbo_confirm: 'Are your sure?' }%>
