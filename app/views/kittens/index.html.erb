@@ -4,6 +4,7 @@
 <% @kittens.each do |kitten| %>
     <li>
         <p><%= kitten.name %></p>
+        <%= link_to 'Delete Kitten', kitten, data: { turbo_method: :delete, turbo_confirm: 'Are your sure?' }%>
     </li>
 <% end %>
 </ul>
